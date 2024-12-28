@@ -171,71 +171,83 @@
 
 
 
-    <script>
-        document.getElementById('continuePurchase').addEventListener('click', function () {
-            const fullName = document.getElementById('fullName').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const repeatEmail = document.getElementById('repeatEmail').value.trim();
-        
-            // Error message elements
-            const nameError = document.getElementById('nameError');
-            const emailError = document.getElementById('emailError');
-            const repeatEmailError = document.getElementById('repeatEmailError');
-        
-            // Reset error messages
-            nameError.classList.remove('active');
-            emailError.classList.remove('active');
-            repeatEmailError.classList.remove('active');
-        
-            let isValid = true;
-        
-            // Validate full name
-            if (!fullName) {
-                nameError.textContent = "This field cannot be empty.";
-                nameError.classList.add('active');
-                isValid = false;
-            }
-        
-            // Validate email
-            if (!email) {
-                emailError.textContent = "This field cannot be empty.";
-                emailError.classList.add('active');
-                isValid = false;
-            }
-        
-            // Validate repeated email
-            if (email && repeatEmail && email !== repeatEmail) {
-                repeatEmailError.textContent = "Emails do not match.";
-                repeatEmailError.classList.add('active');
-                isValid = false;
-            } else if (!repeatEmail) {
-                repeatEmailError.textContent = "This field cannot be empty.";
-                repeatEmailError.classList.add('active');
-                isValid = false;
-            }
-        
-            // If all fields are valid, send request to Lambda
-            if (isValid) {
-                fetch('https://your-lambda-api-endpoint', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        fullName,
-                        email,
-                    }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert('Purchase completed successfully!');
-                })
-                .catch(error => {
-                    alert('An error occurred. Please try again.');
-                });
-            }
-        });
-    </script>
+<script>
+    document.getElementById('continuePurchase').addEventListener('click', function () {
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const repeatEmail = document.getElementById('repeatEmail').value.trim();
+
+        // Error message elements
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const repeatEmailError = document.getElementById('repeatEmailError');
+
+        // Reset error messages
+        nameError.classList.remove('active');
+        emailError.classList.remove('active');
+        repeatEmailError.classList.remove('active');
+
+        let isValid = true;
+
+        // Validate full name
+        if (!fullName) {
+            nameError.textContent = "This field cannot be empty.";
+            nameError.classList.add('active');
+            isValid = false;
+        }
+
+        // Validate email
+        if (!email) {
+            emailError.textContent = "This field cannot be empty.";
+            emailError.classList.add('active');
+            isValid = false;
+        }
+
+        // Validate repeated email
+        if (email && repeatEmail && email !== repeatEmail) {
+            repeatEmailError.textContent = "Emails do not match.";
+            repeatEmailError.classList.add('active');
+            isValid = false;
+        } else if (!repeatEmail) {
+            repeatEmailError.textContent = "This field cannot be empty.";
+            repeatEmailError.classList.add('active');
+            isValid = false;
+        }
+
+        // If all fields are valid, send request to Lambda
+        if (isValid) {
+            fetch('https://f6y9an2kp1.execute-api.us-east-2.amazonaws.com/default', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: fullName, // Update key to "name" to match Lambda
+                    email: email,
+                }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to create session');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.sessionUrl) {
+                    // Redirect to Stripe session URL
+                    window.location.href = data.sessionUrl;
+                } else {
+                    alert('Error: Session URL not found.');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                alert('An error occurred. Please try again.');
+            });
+        }
+    });
+</script>
+
 
 
     <!-- Navbar -->
