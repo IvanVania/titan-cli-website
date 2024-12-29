@@ -215,36 +215,50 @@
         }
 
         // If all fields are valid, send request to Lambda
-        if (isValid) {
-            fetch('https://f6y9an2kp1.execute-api.us-east-2.amazonaws.com/default', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: fullName, // Update key to "name" to match Lambda
-                    email: email,
-                }),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to create session');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.sessionUrl) {
-                    // Redirect to Stripe session URL
-                    window.location.href = data.sessionUrl;
-                } else {
-                    alert('Error: Session URL not found.');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                alert('An error occurred. Please try again.');
-            });
+if (isValid) {
+    console.log('Validation successful. Preparing to send request...');
+    console.log('Request payload:', JSON.stringify({
+        name: fullName,
+        email: email,
+    }));
+
+    fetch('https://f6y9an2kp1.execute-api.us-east-2.amazonaws.com/default', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: fullName, // Update key to "name" to match Lambda
+            email: email,
+        }),
+    })
+    .then(response => {
+        console.log('Received response:', response);
+        if (!response.ok) {
+            console.error('Response status indicates failure:', response.status, response.statusText);
+            throw new Error('Failed to create session');
         }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response data:', data);
+        if (data.sessionUrl) {
+            console.log('Session URL received. Redirecting to:', data.sessionUrl);
+            // Redirect to Stripe session URL
+            window.location.href = data.sessionUrl;
+        } else {
+            console.error('Error: Session URL not found in response.');
+            alert('Error: Session URL not found.');
+        }
+    })
+    .catch(error => {
+        console.error('Error occurred:', error);
+        alert('An error occurred. Please try again.');
+    });
+} else {
+    console.warn('Validation failed. Request not sent.');
+}
+
     });
 </script>
 
