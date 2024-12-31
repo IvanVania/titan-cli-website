@@ -233,10 +233,22 @@
                 return response.json();
             })
             .then(data => {
+                // Логика обработки разных ссылок
                 if (data.sessionUrl) {
+                    // Если это новая сессия оплаты через Stripe
+                    console.log('Redirecting to Stripe Checkout...');
                     window.location.href = data.sessionUrl;
+                } else if (data.redirectUrl === 'https://titancli.com/day_limit') {
+                    // Если дневной лимит превышен
+                    console.log('Daily limit exceeded. Redirecting...');
+                    window.location.href = data.redirectUrl;
+                } else if (data.redirectUrl === 'https://titancli.com/user_exist') {
+                    // Если пользователь уже существует
+                    console.log('User exists. Redirecting...');
+                    window.location.href = data.redirectUrl;
                 } else {
-                    throw new Error('Session URL not found');
+                    // Неизвестный ответ
+                    throw new Error('No valid URL provided in the response');
                 }
             })
             .catch(error => {
@@ -244,6 +256,7 @@
                 alert('An error occurred: ' + (error.message || 'Unknown error'));
             });
         }
+
     });
 </script>
 
