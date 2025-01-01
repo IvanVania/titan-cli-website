@@ -59,11 +59,11 @@
             width: 100%;
             height: 100%;
             z-index: 999;
-            display: none; /* Скрыто по умолчанию */
+            display: none;  
         }
         
         .modal-overlay.active {
-            display: block; /* Показывается, когда активно */
+            display: block;  
         }
         
         .modal-background {
@@ -72,35 +72,35 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8); /* Чёрный полупрозрачный фон */
+            background: rgba(0, 0, 0, 0.8);  
         }
         .input-field {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid white; /* Белая граница */
+            border: 1px solid white;  
             border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
-            backdrop-filter: blur(8px); /* Размытие */
-            color: white; /* Белый текст */
+            background-color: rgba(255, 255, 255, 0.1);  
+            backdrop-filter: blur(8px);  
+            color: white;  
             font-size: 1rem;
             outline: none;
             transition: border-color 0.3s ease;
         }
         
         .input-field:focus {
-            border-color: rgba(96, 165, 250, 1); /* Синяя граница при фокусе */
+            border-color: rgba(96, 165, 250, 1);  
         }
         .error-message {
             color: #ff4d4d;
             font-size: 0.875rem;
-            height: 1rem; /* Фиксированная высота для резервирования места */
+            height: 1rem;  
             margin-top: -0.5rem;
             margin-bottom: 0.5rem;
-            visibility: hidden; /* Делает текст невидимым, не убирая элемент */
+            visibility: hidden;  
         }
         
         .error-message.active {
-            visibility: visible; /* Показывает текст, не меняя высоту */
+            visibility: visible;  
         }
         button#closeModalButton {
             background: transparent;
@@ -182,28 +182,28 @@
         const emailError = document.getElementById('emailError');
         const repeatEmailError = document.getElementById('repeatEmailError');
 
-        // Reset error messages
+        // 
         nameError.classList.remove('active');
         emailError.classList.remove('active');
         repeatEmailError.classList.remove('active');
 
         let isValid = true;
 
-        // Validate full name
+        //  
         if (!fullName) {
             nameError.textContent = "This field cannot be empty.";
             nameError.classList.add('active');
             isValid = false;
         }
 
-        // Validate email
+        // 
         if (!email) {
             emailError.textContent = "This field cannot be empty.";
             emailError.classList.add('active');
             isValid = false;
         }
 
-        // Validate repeated email
+        // 
         if (email && repeatEmail && email !== repeatEmail) {
             repeatEmailError.textContent = "Emails do not match.";
             repeatEmailError.classList.add('active');
@@ -214,7 +214,7 @@
             isValid = false;
         }
 
-        // If all fields are valid, send request to Lambda
+        //  
         if (isValid) {
             fetch('https://mahfgtl4s9.execute-api.us-east-2.amazonaws.com/default', {
                 method: 'POST',
@@ -233,21 +233,21 @@
                 return response.json();
             })
             .then(data => {
-                // Логика обработки разных ссылок
+             
                 if (data.sessionUrl) {
-                    // Если это новая сессия оплаты через Stripe
+                     
                     console.log('Redirecting to Stripe Checkout...');
                     window.location.href = data.sessionUrl;
                 } else if (data.redirectUrl === 'https://titancli.com/day_limit') {
-                    // Если дневной лимит превышен
+                  
                     console.log('Daily limit exceeded. Redirecting...');
                     window.location.href = data.redirectUrl;
                 } else if (data.redirectUrl === 'https://titancli.com/user_exist') {
-                    // Если пользователь уже существует
+                
                     console.log('User exists. Redirecting...');
                     window.location.href = data.redirectUrl;
                 } else {
-                    // Неизвестный ответ
+                
                     throw new Error('No valid URL provided in the response');
                 }
             })
@@ -453,13 +453,13 @@
         function openModal() {
             modal.classList.add('active');
             modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Disable page scroll
+            document.body.style.overflow = 'hidden'; 
         }
     
         function closeModal() {
             modal.classList.remove('active');
             modalOverlay.classList.remove('active');
-            document.body.style.overflow = ''; // Re-enable page scroll
+            document.body.style.overflow = '';  
         }
     
         openModalButton.addEventListener('click', openModal);
@@ -467,8 +467,8 @@
         modalOverlay.addEventListener('click', closeModal);
     
         // 
-        const openModalButton2 = document.getElementById('openModal2'); // Новая кнопка
-        openModalButton2.addEventListener('click', openModal); // Привязываем к той же функции
+        const openModalButton2 = document.getElementById('openModal2');  
+        openModalButton2.addEventListener('click', openModal); 
     </script>
 
 
