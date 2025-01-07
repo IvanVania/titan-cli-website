@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://titancli.com/sitemap.xml
