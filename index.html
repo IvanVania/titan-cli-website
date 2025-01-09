@@ -133,124 +133,97 @@
             right: 15px; /*  */
         }
 
-/* Base container adjustments */
-.container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    width: 100%;
-    max-width: 100%;
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding-left: 150px !important;
-        padding-right: 150px !important;
-    }
-}
-
-/* Mobile navigation fixes */
-@media (max-width: 768px) {
-    .nav {
-        padding: 1rem;
-    }
-    
-    /* Show mobile menu button */
-    .md\:hidden {
-        display: block;
-    }
-    
-    /* Hide desktop menu items */
-    .md\:flex {
-        display: none;
-    }
-}
-
-/* Hero section responsive adjustments */
-@media (max-width: 768px) {
-    .text-5xl {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    
-    .text-xl {
-        font-size: 1.25rem;
-    }
-    
-    .text-lg {
-        font-size: 1rem;
-    }
-    
-    /* Price tag adjustments */
-    .text-6xl {
-        font-size: 3rem;
-    }
-}
-
-/* Features grid adjustment */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-}
-
-/* Testimonials responsive layout */
+/* Testimonials Section Fixes */
 @media (max-width: 768px) {
     .testimonial-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-    
-    .grid-cols-2 {
+        padding: 1rem !important;
         grid-template-columns: 1fr !important;
     }
     
     .testimonial-card {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
     }
 }
 
-/* Company logos responsive grid */
+/* What's Included Section Fixes */
 @media (max-width: 768px) {
-    .grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr) !important;
+    .max-w-2xl {
+        max-width: 100% !important;
+        margin: 0 1rem !important;
     }
     
+    .testimonial-card ul {
+        padding-left: 0.5rem;
+    }
+    
+    .testimonial-card li {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Company Logos Section Fixes */
+@media (max-width: 768px) {
+    .grid-cols-2,
     .grid-cols-3,
     .grid-cols-4 {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
-/* Modal adjustments for mobile */
-@media (max-width: 768px) {
-    .modal {
-        width: 90% !important;
-        margin: 0 auto;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
     }
     
-    .input-field {
-        font-size: 16px !important; /* Prevents iOS zoom on input focus */
+    .flex.justify-center.items-center {
+        padding: 1rem 0;
+    }
+    
+    /* Increase logo size for better visibility */
+    .h-20 {
+        height: 3rem;
     }
 }
 
-/* Button adjustments */
+/* Local Folder Architecture Section Fixes */
 @media (max-width: 768px) {
-    button {
+    .container img {
         width: 100%;
-        margin: 0.5rem 0;
+        margin-bottom: 1.5rem;
     }
     
-    .flex.justify-center.gap-4 {
-        flex-direction: column;
+    .text-center.max-w-4xl {
+        padding: 0 1rem;
+    }
+    
+    .text-gray-300 {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 }
 
-/* Images and media content */
+/* General spacing fixes */
 @media (max-width: 768px) {
-    img {
-        max-width: 100%;
-        height: auto;
+    .py-16 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .mb-12 {
+        margin-bottom: 2rem !important;
+    }
+    
+    .gap-8 {
+        gap: 2rem !important;
+    }
+}
+
+/* Fix text alignment and sizing */
+@media (max-width: 768px) {
+    .text-3xl {
+        font-size: 1.875rem !important;
+        line-height: 2.25rem !important;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
     }
 }
 
