@@ -367,6 +367,127 @@ img {
             bottom: -50px;
             left: -50px;
         }
+
+            /* Base container adjustments */
+.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: 150px !important;
+        padding-right: 150px !important;
+    }
+}
+
+/* Mobile navigation fixes */
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem;
+    }
+    
+    /* Show mobile menu button */
+    .md\:hidden {
+        display: block;
+    }
+    
+    /* Hide desktop menu items */
+    .md\:flex {
+        display: none;
+    }
+}
+
+/* Hero section responsive adjustments */
+@media (max-width: 768px) {
+    .text-5xl {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .text-xl {
+        font-size: 1.25rem;
+    }
+    
+    .text-lg {
+        font-size: 1rem;
+    }
+    
+    /* Price tag adjustments */
+    .text-6xl {
+        font-size: 3rem;
+    }
+}
+
+/* Features grid adjustment */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Testimonials responsive layout */
+@media (max-width: 768px) {
+    .testimonial-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .testimonial-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Company logos responsive grid */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Modal adjustments for mobile */
+@media (max-width: 768px) {
+    .modal {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+    
+    .input-field {
+        font-size: 16px !important; /* Prevents iOS zoom on input focus */
+    }
+}
+
+/* Button adjustments */
+@media (max-width: 768px) {
+    button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .flex.justify-center.gap-4 {
+        flex-direction: column;
+    }
+}
+
+/* Images and media content */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
     </style>
     <style>
     .bg-gradient-custom-unique {
