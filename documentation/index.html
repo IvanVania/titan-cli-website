@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="image.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan CLI - Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <style>
+        .bg-gradient-custom {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+        .doc-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.3s ease;
+        }
+        .doc-card:hover {
+            border-color: rgba(96, 165, 250, 0.4);
+            transform: translateY(-2px);
+        }
+        pre {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="bg-gradient-custom text-white min-h-screen">
+    <!-- Navbar -->
+    <nav class="border-b border-slate-700 backdrop-blur bg-opacity-80 bg-slate-900 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L3 6v6c0 6 9 10 9 10s9-4 9-10V6l-9-4z" />
+                    </svg>
+                    <span class="text-xl font-bold text-gradient">Titan CLI</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8"> 
+                    <a href="/documentation" class="text-gray-300 hover:text-white">Documentation</a>
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+<main class="flex-grow">
+
+    <!-- Documentation Content -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8 text-gradient">Documentation</h1>
+            
+            <!-- Getting Started -->
+            <div class="doc-card rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-4">Getting Started</h2>
+                <p class="text-gray-300 mb-4">Before installation, ensure you have the following prerequisites:</p>
+                
+                <h3 class="text-xl font-semibold mb-2">Prerequisites</h3>
+                <ul class="list-disc list-inside text-gray-300 mb-6">
+                    <li class="mb-2">Python 3.9 or higher</li>
+                    <li class="mb-2">Node.js v22.0 or higher</li>
+                    <li class="mb-2">npm v10.0 or higher</li>
+                    <li class="mb-2">AWS CLI configured with appropriate permissions</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-2">Installation Steps</h3>
+                <ol class="list-decimal list-inside text-gray-300 mb-6">
+                    <li class="mb-2">Unzip the downloaded file</li>
+                    <li class="mb-2">Open terminal in the unzipped folder</li>
+                    <li class="mb-2">Run installation command:
+                        <pre><code>bash install.sh</code></pre>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- AWS IAM Setup -->
+            <div class="doc-card rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-4">AWS IAM Setup</h2>
+                <p class="text-gray-300 mb-4">Configure your IAM user with the necessary permissions:</p>
+                
+                <ol class="list-decimal list-inside text-gray-300 mb-6">
+                    <li class="mb-2">Navigate to AWS Console → IAM → Policies</li>
+                    <li class="mb-2">You will find these JSON files in the downloaded ZIP folder. Simply copy and paste them into your AWS IAM policies section. Create new policies using provided JSON files:
+                        <ul class="list-disc list-inside ml-6 mt-2">
+                            <li>permissions-policies-titan.json</li>
+                            <li>permissions-boundary-titan.json</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">Attach policies to your IAM user</li>
+                </ol>
+            </div>
+
+            <!-- Usage -->
+<!-- Usage -->
+<div class="doc-card rounded-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold mb-4">Basic Usage</h2>
+    <p class="text-gray-300 mb-4">Titan CLI provides three main commands that perform essential actions. All commands must be run in the terminal, opened in the project folder:</p>
+    
+    <pre><code># Set up the project environment
+titan setup-env
+
+# Deploy all functions
+titan deploy-main
+
+# Deploy a specific version
+titan deploy v5.0</code></pre>
+
+    <p class="text-gray-300 mt-4">
+        <strong>Details:</strong>
+    </p>
+    <ul class="list-disc list-inside text-gray-300">
+        <li><code>titan setup-env</code>: This command initializes the environment by creating all necessary folders and files in the correct format. It can also update the folder structure if changes are detected.</li>
+        <li><code>titan deploy-main</code>: Deploys all Lambda functions in the current project folder.</li>
+        <li><code>titan deploy v5.0</code>: Deploys a specific version of the project (e.g., version <code>v5.0</code>).</li>
+    </ul>
+</div>
+
+<!-- Settings File -->
+<div class="doc-card rounded-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold mb-4">Settings File</h2>
+    <p class="text-gray-300 mb-4">
+        Titan CLI automatically generates and manages a JSON settings file, which contains essential configuration details for your project. This file provides:
+    </p>
+    <ul class="list-disc list-inside text-gray-300 mb-4">
+        <li>API links for deployed functions</li>
+        <li>Required libraries for each function</li>
+        <li>Project metadata (e.g., version, project name, IAM role)</li>
+        <li>Runtime environments for each function</li>
+    </ul>
+
+    <p class="text-gray-300 mb-4">
+        The settings file is automatically updated after each deployment or when running the <code>titan setup-env</code> command. There is no need to manually edit or create this file.
+    </p>
+
+    <pre><code>{
+    "project_name": "test_project",
+    "version": "v5.0",
+    "role": {
+        "name": "test_project_role",
+        "arn": "arn:aws:iam::5436вам48:role/test_project_role"
+    },
+    "packages": {
+        "function2": [
+            "json",
+            "datetime",
+            "math",
+            "requests"
+        ],
+        "function3": [],
+        "function4": [
+            "https",
+            "lodash",
+            "moment",
+            "crypto",
+            "querystring"
+        ],
+        "function1": []
+    },
+    "api_links": {
+        "function2": "https://f64fваu6.execute-api.us-east-2.amazonaws.com/default",
+        "function3": "https://xcвамta.execute-api.us-east-2.amazonaws.com/default",
+        "function4": "https://aciвамx5.execute-api.us-east-2.amazonaws.com/default",
+        "function1": "https://7ckвам5b.execute-api.us-east-2.amazonaws.com/default"
+    },
+    "runtime": {
+        "function2": "python3.9",
+        "function3": "python3.9",
+        "function4": "nodejs16.x",
+        "function1": "nodejs16.x"
+    }
+}</code></pre>
+
+    <p class="text-gray-300 mt-4">
+        This file is crucial for managing deployments and ensuring that each function is properly configured with its dependencies, runtime, and API links.
+    </p>
+</div>
+
+
+
+
+<!-- Project Structure -->
+<div class="doc-card rounded-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold mb-4">Project Structure</h2>
+    <p class="text-gray-300 mb-4">
+        After setup, your project will have the following automatically created structure. There is no need to manually configure or create it:
+    </p>
+    
+    <pre><code>project/
+├── api/           # Place your function files here
+├── settings.json  # Automatically generated configuration and API links
+└── history/       # Automatically maintained version history</code></pre>
+    
+    <p class="text-gray-300 mt-4">
+        You only need to add your API files to the <code>api/</code> folder. Titan CLI will handle the rest automatically, including configuration, versioning, and deployment setup.
+    </p>
+</div>
+
+
+</main>
+
+
+
+    <!-- Footer (Moved outside container) -->
+    <footer class="w-full border-t border-slate-700 bg-slate-800 mt-auto">
+        <div class="py-6">
+            <div class="text-center text-gray-400">
+                © 2024 Titan-CLI. All rights reserved.
+            </div>
+            <div class="text-center text-gray-400 mt-4">
+                For support, contact us at <a href="mailto:support@titancli.com" class="text-blue-400 hover:underline">support@titancli.com</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
