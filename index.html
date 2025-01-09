@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <link rel="icon" type="image/png" href="image.png">
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Titan CLI lets you deploy AWS Lambda functions with one command. Cost-effective serverless solution with lifetime access and no monthly fees.">
     <meta name="keywords" content="Titan CLI, AWS Lambda, serverless deployment, AWS Lambda functions, Vercel alternative, function deployment">
@@ -133,400 +134,9 @@
             right: 15px; /*  */
         }
 
-/* Testimonials Section Fixes */
-@media (max-width: 768px) {
-    .testimonial-container {
-        padding: 1rem !important;
-        grid-template-columns: 1fr !important;
-    }
-    
-    .testimonial-card {
-        margin-bottom: 2rem;
-        width: 100%;
-    }
-}
 
-/* What's Included Section Fixes */
-@media (max-width: 768px) {
-    .max-w-2xl {
-        max-width: 100% !important;
-        margin: 0 1rem !important;
-    }
-    
-    .testimonial-card ul {
-        padding-left: 0.5rem;
-    }
-    
-    .testimonial-card li {
-        margin-bottom: 1rem;
-    }
-}
-
-/* Company Logos Section Fixes */
-@media (max-width: 768px) {
-    .grid-cols-2,
-    .grid-cols-3,
-    .grid-cols-4 {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-    }
-    
-    .flex.justify-center.items-center {
-        padding: 1rem 0;
-    }
-    
-    /* Increase logo size for better visibility */
-    .h-20 {
-        height: 3rem;
-    }
-}
-
-/* Local Folder Architecture Section Fixes */
-@media (max-width: 768px) {
-    .container img {
-        width: 100%;
-        margin-bottom: 1.5rem;
-    }
-    
-    .text-center.max-w-4xl {
-        padding: 0 1rem;
-    }
-    
-    .text-gray-300 {
-        font-size: 0.95rem;
-        line-height: 1.5;
-    }
-}
-
-/* General spacing fixes */
-@media (max-width: 768px) {
-    .py-16 {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-    }
-    
-    .mb-12 {
-        margin-bottom: 2rem !important;
-    }
-    
-    .gap-8 {
-        gap: 2rem !important;
-    }
-}
-
-/* Fix text alignment and sizing */
-@media (max-width: 768px) {
-    .text-3xl {
-        font-size: 1.875rem !important;
-        line-height: 2.25rem !important;
-    }
-    
-    .testimonial-text {
-        font-size: 1rem !important;
-        line-height: 1.5rem !important;
-    }
-}
 
     </style>
-
-        <style>
-            .grid {
-    gap: 2rem;  
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;  
-}
-
-.container {
-    padding-left: 150px;
-    padding-right: 150px;
-    box-sizing: border-box;
-}
-
-        .testimonial-container {
-            width: 100%;               
-            padding: 0 150px;          
-            box-sizing: border-box;     
-        }
-
-
-        .testimonial-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-            border: 1px solid rgba(100, 116, 139, 0.2);
-            border-radius: 16px;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(96, 165, 250, 0.4);
-        }
-
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .quote-icon {
-            font-size: 4rem;
-            color: rgba(96, 165, 250, 0.1);
-            position: absolute;
-            top: -1rem;
-            left: -1rem;
-            font-family: serif;
-        }
-
-        .testimonial-text {
-            color: #e2e8f0;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .star-rating {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 1rem;
-        }
-
-        .star {
-            width: 20px;
-            height: 20px;
-            fill: #fbbf24;
-            transition: transform 0.2s ease;
-        }
-
-        .star:hover {
-            transform: scale(1.1);
-        }
-
-        .author-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            border-top: 1px solid rgba(100, 116, 139, 0.2);
-            padding-top: 1.5rem;
-        }
-
-        .author-image {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .author-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .author-name {
-            color: #f8fafc;
-            font-weight: 600;
-        }
-
-        .author-title {
-            color: #94a3b8;
-            font-size: 0.875rem;
-        }
-
-        .gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(50px);
-            opacity: 0.15;
-        }
-
-        .orb-1 {
-            width: 150px;
-            height: 150px;
-            background: #3b82f6;
-            top: -75px;
-            right: -75px;
-        }
-
-        .orb-2 {
-            width: 100px;
-            height: 100px;
-            background: #8b5cf6;
-            bottom: -50px;
-            left: -50px;
-        }
-
-            /* Base container adjustments */
-.container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    width: 100%;
-    max-width: 100%;
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding-left: 150px !important;
-        padding-right: 150px !important;
-    }
-}
-
-/* Mobile navigation fixes */
-@media (max-width: 768px) {
-    .nav {
-        padding: 1rem;
-    }
-    
-    /* Show mobile menu button */
-    .md\:hidden {
-        display: block;
-    }
-    
-    /* Hide desktop menu items */
-    .md\:flex {
-        display: none;
-    }
-}
-
-/* Hero section responsive adjustments */
-@media (max-width: 768px) {
-    .text-5xl {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    
-    .text-xl {
-        font-size: 1.25rem;
-    }
-    
-    .text-lg {
-        font-size: 1rem;
-    }
-    
-    /* Price tag adjustments */
-    .text-6xl {
-        font-size: 3rem;
-    }
-}
-
-/* Features grid adjustment */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-}
-
-/* Testimonials responsive layout */
-@media (max-width: 768px) {
-    .testimonial-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-    
-    .grid-cols-2 {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .testimonial-card {
-        margin-bottom: 1.5rem;
-    }
-}
-
-/* Company logos responsive grid */
-@media (max-width: 768px) {
-    .grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    
-    .grid-cols-3,
-    .grid-cols-4 {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
-/* Modal adjustments for mobile */
-@media (max-width: 768px) {
-    .modal {
-        width: 90% !important;
-        margin: 0 auto;
-    }
-    
-    .input-field {
-        font-size: 16px !important; /* Prevents iOS zoom on input focus */
-    }
-}
-
-/* Button adjustments */
-@media (max-width: 768px) {
-    button {
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-    
-    .flex.justify-center.gap-4 {
-        flex-direction: column;
-    }
-}
-
-/* Images and media content */
-@media (max-width: 768px) {
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-    </style>
-    <style>
-    .bg-gradient-custom-unique {
-        background: linear-gradient(to bottom, #0f172a, #1e293b);
-    }
-    .text-gradient-unique {
-        background: linear-gradient(to right, #60a5fa, #a855f7);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
-    .doc-card-unique {
-        background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-        border: 1px solid rgba(100, 116, 139, 0.2);
-        transition: all 0.3s ease;
-    }
-    .doc-card-unique:hover {
-        border-color: rgba(96, 165, 250, 0.4);
-        transform: translateY(-2px);
-    }
-    .container-unique {
-        padding-left: 150px;
-        padding-right: 150px;
-        box-sizing: border-box;
-    }
-    pre.unique-pre {
-        background: rgba(15, 23, 42, 0.5);
-        border: 1px solid rgba(100, 116, 139, 0.2);
-        border-radius: 0.5rem;
-        padding: 1rem;
-        overflow-x: auto;
-    }
-    code.unique-code {
-        font-family: monospace;
-        color: #60a5fa;
-    }
-</style>
-
-
 </head>
 <body class="bg-gradient-custom text-white min-h-screen">
 
@@ -673,32 +283,27 @@ img {
 
 
 
-<!-- Navbar -->
-<nav class="border-b border-slate-700 backdrop-blur bg-opacity-80 bg-slate-900 sticky top-0 z-50">
-    <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
-            <div class="flex items-center gap-2">
-                <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L3 6v6c0 6 9 10 9 10s9-4 9-10V6l-9-4z" />
-                </svg>
-                <span class="text-xl font-bold text-gradient">Titan CLI</span>
-            </div>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/documentation" class="text-gray-300 hover:underline cursor-pointer">
-                    Documentation
-                </a>
-                <button id="openModal" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold">
-                    Get Started
+    <!-- Navbar -->
+    <nav class="border-b border-slate-700 backdrop-blur bg-opacity-80 bg-slate-900 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L3 6v6c0 6 9 10 9 10s9-4 9-10V6l-9-4z" />
+                    </svg>
+                    <span class="text-xl font-bold text-gradient">Titan CLI</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                   <button id="openModal" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold">
+                        Get Started
+                    </button>
+                </div>
+                <button class="md:hidden">
+                    <i class="lucide-menu w-6 h-6"></i>
                 </button>
             </div>
-            <button class="md:hidden">
-                <i class="lucide-menu w-6 h-6"></i>
-            </button>
         </div>
-    </div>
-</nav>
-
-
+    </nav>
 
     <!-- Hero Section -->
     <div class="container mx-auto px-4 py-16">
@@ -756,275 +361,73 @@ img {
         </div>
     </div>
 
+    <!-- Features -->
+    <div class="container mx-auto px-4 py-16" id="features">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <i class="lucide-terminal w-12 h-12 text-blue-400 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">One Command Deploy</h3>
+                <p class="text-gray-300">
+                    Just write your function, put it in the api folder, and deploy with a single command. We handle all AWS Lambda configuration.
+                </p>
+            </div>
 
-<!-- Features -->
-<div class="container mx-auto px-4 py-16 relative" id="features">
-    <!-- Gradient Orbs -->
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <i class="lucide-dollar-sign w-12 h-12 text-green-400 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">Massive Cost Savings</h3>
+                <p class="text-gray-300">
+                    Pay once, deploy forever. Save up to 8x compared to Vercel's monthly subscriptions while keeping the same performance.
+                </p>
+            </div>
 
-    <div class="grid md:grid-cols-3 gap-8 relative">
-        <div class="testimonial-card bg-slate-800 border border-slate-700 rounded-lg p-6 relative">
-            <i class="lucide-terminal w-12 h-12 text-blue-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-4">One Command Deploy</h3>
-            <p class="text-gray-300">
-                Just write your function, put it in the api folder, and deploy with a single command. We handle all AWS Lambda configuration.
-            </p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 border border-slate-700 rounded-lg p-6 relative">
-            <i class="lucide-dollar-sign w-12 h-12 text-green-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-4">Massive Cost Savings</h3>
-            <p class="text-gray-300">
-                Pay once, deploy forever. Save up to 8x compared to Vercel's monthly subscriptions while keeping the same performance.
-            </p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 border border-slate-700 rounded-lg p-6 relative">
-            <i class="lucide-rocket w-12 h-12 text-purple-400 mb-4"></i>
-            <h3 class="text-xl font-semibold mb-4">Unlimited Deployments</h3>
-            <p class="text-gray-300">
-                Deploy as many functions as you need. No monthly limits. No hidden fees. Just pure serverless power.
-            </p>
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <i class="lucide-rocket w-12 h-12 text-purple-400 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-4">Unlimited Deployments</h3>
+                <p class="text-gray-300">
+                    Deploy as many functions as you need. No monthly limits. No hidden fees. Just pure serverless power.
+                </p>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- How Does It Work Section -->
-<div class="container-unique mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-gradient-unique">How Does It Work?</span>
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Step 1 -->
-        <div class="doc-card-unique rounded-lg p-6 text-center">
-            <div class="mb-4">
-                <img src="images/step1.png" alt="Download Titan CLI" class="mx-auto max-w-full h-auto">
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Step 1</h3>
-            <p class="text-gray-300">Download and install <strong>Titan CLI</strong> from the official website.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="doc-card-unique rounded-lg p-6 text-center">
-            <div class="mb-4">
-                <img src="images/step2.png" alt="AWS IAM Setup" class="mx-auto max-w-full h-auto">
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Step 2</h3>
-            <p class="text-gray-300">Copy and paste the <strong>permissions JSON</strong> into your AWS IAM policy.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="doc-card-unique rounded-lg p-6 text-center">
-            <div class="mb-4">
-                <img src="images/step3.png" alt="Prepare Project Folder" class="mx-auto max-w-full h-auto">
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Step 3</h3>
-            <p class="text-gray-300">Open your project folder in the terminal and place all your APIs in the <code class="unique-code">api</code> folder.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="doc-card-unique rounded-lg p-6 text-center">
-            <div class="mb-4">
-                <img src="images/step4.png" alt="Run Titan Command" class="mx-auto max-w-full h-auto">
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Step 4</h3>
-            <p class="text-gray-300">Run the command:
-                <pre class="unique-pre mt-4"><code class="unique-code">titan deploy-main</code></pre>
-                to deploy all Lambda functions in one go.
-            </p>
-        </div>
-    </div>
-</div>
-
 
     <!-- What's Included -->
-<!-- What's Included -->
-<div class="container mx-auto px-4 py-16 relative">
-    <!-- Gradient Orbs -->
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
-
-    <!-- <h2 class="text-3xl font-bold text-center mb-12">What You Get</h2> -->
-    <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-gradient">What You Get</span>
-    </h2>
-
-    <div class="max-w-2xl mx-auto relative">
-        <div class="testimonial-card bg-slate-800 border border-slate-700 rounded-lg p-6">
-            <ul class="space-y-4">
-                <li class="flex items-center gap-3">
-                    <i class="lucide-zap text-blue-400"></i>
-                    <span>Lifetime access to Titan-CLI</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <i class="lucide-zap text-blue-400"></i>
-                    <span>Unlimited function deployments</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <i class="lucide-zap text-blue-400"></i>
-                    <span>JavaScript & Python support</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <i class="lucide-zap text-blue-400"></i>
-                    <span>Automatic creation of CloudWatch log groups for each function</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <i class="lucide-zap text-blue-400"></i>
-                    <span>Version history tracking and rollback capabilities</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <i class="lucide-zap text-blue-400"></i>
-                    <span>Log monitoring for debugging and insights</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<div class="container mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-gradient">Used by Engineers from</span>
-    </h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
-        <!-- Example Company Logos -->
-        <div class="flex justify-center items-center">
-            <img src="images/company1.png" alt="Company 1" class="h-20 object-contain">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="images/company2.png" alt="Company 2" class="h-20 object-contain">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="images/company3.png" alt="Company 3" class="h-20 object-contain">
-        </div>
-        <div class="flex justify-center items-center">
-            <img src="images/company4.png" alt="Company 4" class="h-20 object-contain">
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<!-- Testimonials Section -->
-     <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-gradient-unique">Customer Reviews</span>
-    </h2>
-<div class="testimonial-container grid grid-cols-2 gap-8 px-4 py-16">
-
-    <div class="testimonial-card">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="testimonial-content">
-            <span class="quote-icon">"</span>
-            <p class="testimonial-text">
-                I stopped paying for a subscription to Vercel and now use Titan CLI for all my projects. It's simple and convenient. It has significantly sped up development, allowing me to create APIs in two languages simultaneously—JavaScript and Python—and deploy them at the same time.
-            </p>
-            <div class="star-rating">
-                ★★★★★
-            </div>
-            <div class="author-info">
-                <div class="author-image">V</div>
-                <div class="author-details">
-                    <div class="author-name">Va••••••</div>
-                    <div class="author-title">Software Engineer</div>
-                </div>
+    <div class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">What You Get</h2>
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <i class="lucide-zap text-blue-400"></i>
+                        <span>Lifetime access to Titan-CLI</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="lucide-zap text-blue-400"></i>
+                        <span>Unlimited function deployments</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="lucide-zap text-blue-400"></i>
+                        <span>JavaScript & Python support</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="lucide-zap text-blue-400"></i>
+                        <span>Automatic creation of CloudWatch log groups for each function</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="lucide-zap text-blue-400"></i>
+                        <span>Version history tracking and rollback capabilities</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="lucide-zap text-blue-400"></i>
+                        <span>Log monitoring for debugging and insights</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <div class="testimonial-card">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="testimonial-content">
-            <span class="quote-icon">"</span>
-            <p class="testimonial-text">
-                I migrated all my projects to AWS Lambda from Vercel, all with a single command. I reduced costs by 7 times compared to Vercel. Extremely satisfied with the service.
-            </p>
-            <div class="star-rating">
-                ★★★★★
-            </div>
-            <div class="author-info">
-                <div class="author-image">I</div>
-                <div class="author-details">
-                    <div class="author-name">Iv••••••</div>
-                    <div class="author-title">Software Engineer</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonial-card">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="testimonial-content">
-            <span class="quote-icon">"</span>
-            <p class="testimonial-text">
-                An excellent service. I no longer need to figure out how to integrate other AWS services on Vercel. I can simply integrate everything directly.
-            </p>
-            <div class="star-rating">
-                ★★★★★
-            </div>
-            <div class="author-info">
-                <div class="author-image">C</div>
-                <div class="author-details">
-                    <div class="author-name">Ca••••••</div>
-                    <div class="author-title">Indie Developer</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonial-card">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="testimonial-content">
-            <span class="quote-icon">"</span>
-            <p class="testimonial-text">
-                The one-time payment model is incredibly cost-effective compared to Vercel's subscription and also offers features unavailable on Vercel, such as simultaneously deploying API functions in both JavaScript and Python.
-            </p>
-            <div class="star-rating">
-                ★★★★★
-            </div>
-            <div class="author-info">
-                <div class="author-image">D</div>
-                <div class="author-details">
-                    <div class="author-name">Da••••••</div>
-                    <div class="author-title">Developer</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-    
-
-
-
 
     <!-- Local Folder Architecture Section -->
     <div class="container mx-auto px-4 py-16">
-        <!-- <h2 class="text-3xl font-bold text-center mb-8">Local Folder Architecture</h2> -->
-        <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-gradient">Local Folder Architecture</span>
-        </h2>
-
+        <h2 class="text-3xl font-bold text-center mb-8">Local Folder Architecture</h2>
         <div class="text-center max-w-4xl mx-auto">
             <img src="folder-project.png" alt="Folder Architecture" class="rounded-lg border border-slate-700 mb-6">
             <p class="text-gray-300">This folder structure saves all your project history and deployment configurations, ensuring seamless version control and rollback capabilities.</p>
@@ -1033,11 +436,7 @@ img {
 
     <!-- Terminal API Commands Section -->
     <div class="container mx-auto px-4 py-16">
-        <!-- <h2 class="text-3xl font-bold text-center mb-8">Deploy API functions in AWS Lambda with just one command</h2> -->
-        <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="text-gradient">Deploy API functions in AWS Lambda with just one command</span>
-        </h2>
-
+        <h2 class="text-3xl font-bold text-center mb-8">Deploy API functions in AWS Lambda with just one command</h2>
         <div class="text-center max-w-4xl mx-auto">
             <img src="terminal.png" alt="Terminal API Commands" class="rounded-lg border border-slate-700 mb-6">
             <p class="text-gray-300">Deploy API functions in AWS Lambda with just one command, streamlining your workflow effortlessly.</p>
@@ -1069,8 +468,6 @@ img {
             </div>
         </div>
     </footer>
-
-
 
     <script>
         const openModalButton = document.getElementById('openModal');
